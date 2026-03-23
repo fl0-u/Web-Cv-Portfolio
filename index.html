@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>MyResume w Bootstrap</title>
+  <title>MyResume w Bootstrap </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -14,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,16 +24,24 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Three.js CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body class="index-page">
+
   <header id="header" class="header d-flex flex-column justify-content-center">
+
     <i class="header-toggle d-xl-none bi bi-list"></i>
+
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
@@ -43,29 +52,30 @@
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contacto</span></a></li>
       </ul>
     </nav>
+
   </header>
 
   <main class="main">
 
     <!-- Hero Section -->
-<section id="hero" class="hero section light-background">
-  <canvas id="threejs-hero"></canvas>
+    <section id="hero" class="hero section light-background">
 
-  <div class="container" data-aos="zoom-out">
-    <div class="row justify-content-center">
-      <div class="col-lg-9">
-        <h2>Bryan Flores</h2>
-        <p>Soy <span class="typed" data-typed-items="Programador,Técnico,Ejecutivo en Ventas">Programador</span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-        </p>
-        <div class="social-links">
-          <a href="https://github.com/fl0-u"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/bryan-r-936034237/"><i class="bi bi-linkedin"></i></a>
+      <img src="assets/img/hero-bg.jpg" alt="">
+
+      <div class="container" data-aos="zoom-out">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>Bryan Flores</h2>
+            <p>Soy <span class="typed" data-typed-items="Programador,Técnico,Ejecutivo en Ventas">Programador</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <a href="https://github.com/fl0-u"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/bryan-r-936034237/"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+
+    </section><!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -362,11 +372,7 @@
         <a href="https://github.com/fl0-u"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/bryan-r-936034237/"><i class="bi bi-linkedin"></i></a>
       </div>
-      <canvas id="threejs-footer" width="200" height="100"></canvas>
       <div class="container">
-        <div class="copyright text-center">
-          <p>&copy; 2026 Bryan Flores. Todos los derechos reservados.</p>
-        </div>
       </div>
     </div>
   </footer>
@@ -391,60 +397,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- Three.js Script -->
-  <script>
-    // Initialize Three.js scene for hero background
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threejs-hero'), alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    // Create a rotating torus knot
-    const geometry = new THREE.TorusKnotGeometry(1, 0.4, 100, 16);
-    const material = new THREE.MeshBasicMaterial({ color: 0x0563bb, wireframe: true });
-    const torusKnot = new THREE.Mesh(geometry, material);
-    scene.add(torusKnot);
-
-    camera.position.z = 5;
-
-    function animate() {
-      requestAnimationFrame(animate);
-      torusKnot.rotation.x += 0.005;
-      torusKnot.rotation.y += 0.005;
-      renderer.render(scene, camera);
-    }
-    animate();
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-
-    // Footer Three.js scene
-    const footerScene = new THREE.Scene();
-    const footerCamera = new THREE.PerspectiveCamera(75, 200 / 100, 0.1, 1000);
-    const footerRenderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threejs-footer'), alpha: true });
-    footerRenderer.setSize(200, 100);
-
-    // Create a small rotating cube
-    const footerGeometry = new THREE.BoxGeometry(1, 1, 1);
-    const footerMaterial = new THREE.MeshBasicMaterial({ color: 0x0563bb, wireframe: true });
-    const footerCube = new THREE.Mesh(footerGeometry, footerMaterial);
-    footerScene.add(footerCube);
-
-    footerCamera.position.z = 2;
-
-    function animateFooter() {
-      requestAnimationFrame(animateFooter);
-      footerCube.rotation.x += 0.01;
-      footerCube.rotation.y += 0.01;
-      footerRenderer.render(footerScene, footerCamera);
-    }
-    animateFooter();
-  </script>
 
 </body>
 
