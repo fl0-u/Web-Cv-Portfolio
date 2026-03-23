@@ -155,6 +155,20 @@ h6 {
   min-width: 200px;
 }
 
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+#threejs-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind text */
+}
+
 @media (max-width: 1199px) {
   .header {
     background-color: var(--background-color);
